@@ -1,0 +1,67 @@
+<div class="container p-4">
+    <div class="row">
+        <div class="col-md-4 mx-auto">
+            <div class="card">
+                <div class="card-header text-center">
+                    <h3>
+                        REGISTRATE YA!
+                    </h3>
+                </div>
+                    <div class="card-body">
+                        <form action="/signup" method="post" class="needs-validation" novalidate>
+                            <div class="form-group">
+                                <input type="text" name="nameUser" id="nameUser" placeholder="Nombre de Usuario"
+                                    class="form-control" required>
+                                <div class="valid-feedback">
+                                    Nombre de usuario valido.
+                                </div>
+                                <div class="invalid-feedback">
+                                    Completar este campo, entre 4 y 16 caracteres. Ingresar solo letras, numeros o guiones.
+                                </div>
+                            </div>
+                            <br>
+                            <div class="form-group">
+                                <input type="email" name="emailUser" id="emailUser" placeholder="Correo Electronico"
+                                    class="form-control" required>
+                                <div class="valid-feedback">
+                                    Correo Valido.
+                                </div>
+                                <div class="invalid-feedback">
+                                    Solo valido correo electronico.
+                                </div>
+                            </div>
+                            <br>
+                            <div class="form-group">
+                                <input type="password" name="passwordUser" id="passwordUser" placeholder="Password"
+                                    class="form-control" required>
+                                <div class="valid-feedback">
+                                    Correo valido.
+                                </div>
+                                <div class="invalid-feedback">
+                                    Completar este campo, entre 10 y 32 caracteres. Ingresar solo letras, numeros o guiones.
+                                </div>
+                            </div>
+                            <br>
+                            <div class="form-group">
+                                <input type="text" name="fullnameUser" id="fullnameUser" placeholder="Nombre Completo"
+                                    class="form-control" required>
+                                <div class="valid-feedback">
+                                    Nombre Completo valido.
+                                </div>
+                                <div class="invalid-feedback">
+                                    Completar este campo, máximo 64 caracteres. Ingresar solo letras, numeros o guiones.
+                                </div>
+                            </div>
+                            <br>
+                            <div class="form-group text-center">
+                                <button class="btn btn-success btn-block">
+                                    REGISTRARTE
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/js/validation.js"></script>

@@ -1,0 +1,21 @@
+body{
+  background: rgb(24, 26, 27);
+}
+
+#card-list{
+    background: rgb(247, 248, 247);
+}
+
+#update-link{
+    background: rgb(35, 148, 253);
+    border: 1px rgb(35, 148, 253) solid;  
+}
+#delete-link{
+    background: rgb(165, 29, 42);
+    border: 1px rgb(165, 29, 42) solid;
+}
+
+#btn-secundary{
+    background: darkgray;
+    color: white;
+}

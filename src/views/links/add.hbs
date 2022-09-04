@@ -1,0 +1,51 @@
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 mx-auto">
+            <div class="card">
+                <div class="card-header text-center">
+                    <h3>
+                        NUEVO LINK
+                    </h3>
+                </div>
+                <div class="card-body">
+                    <form action="/links/add" method="post" class="needs-validation" novalidate>
+                        <div class="form-group">
+                            <input type="text" name="titleLink" id="titleLink" placeholder="Titulo" class="form-control"
+                                autofocus required>
+                            <div class="valid-feedback">
+                                Titulo Valido.
+                            </div>
+                            <div class="invalid-feedback">
+                                Titulo Invalido, necesita por lo menos un caracter.
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <input type="url" name="urlLink" id="urlLink" placeholder="URL" class="form-control"
+                                required>
+                            <div class="valid-feedback">
+                                Link valido.
+                            </div>
+                            <div class="invalid-feedback">
+                                Link Invalido.
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <textarea name="descriptionLink" id="descriptionLink" placeholder="Descripción"
+                                class="form-control"></textarea>
+                        </div>
+                        <br>
+                        <div class="form-group text-center">
+                            <button class="btn btn-success btn-block">
+                                Crear Link
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/js/validation.js"></script>

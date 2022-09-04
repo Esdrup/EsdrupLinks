@@ -1,0 +1,97 @@
+<div class="container p-4">
+    <div class="row">
+        <div class="col-md-4 mx-auto">
+            <div class="card text-center">
+                <div class="card-header">
+                    <h4>
+                        Bienvenido {{user.nameUser}}
+                    </h4>
+                </div>
+                <div class="card-body">
+                    <h5>
+                        {{user.fullnameUser}}, tus links te esperan
+                    </h5>
+                    <a href="/links" class="btn btn-primary text-white">IR AHORA</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row pt-4 ">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header text-center">
+                    <h5>
+                        <strong>Datos de {{user.nameUser}}</strong>
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <form action="/profile/update/{{user.idUser}}" method="post" class="needs-validation" novalidate>
+                        <div class="form-group">
+                            <label for="nameUser" class="form-label"><strong>Nombre de Usuario</strong></label>
+                            <input type="text" name="nameUser" id="nameUser" class="form-control"
+                                value="{{user.nameUser}}" required>
+                                <div class="valid-feedback">
+                                    Nombre de usuario valido.
+                                </div>
+                                <div class="invalid-feedback">
+                                    Completar este campo, entre 4 y 16 caracteres. Ingresar solo letras, numeros o guiones.
+                                </div>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <label for="fullnameUser" class="form-label"><strong>Nombre Completo</strong></label>
+                            <input type="text" name="fullnameUser" id="fullnameUser" value="{{user.fullnameUser}}"
+                                class="form-control" required>
+                                <div class="valid-feedback">
+                                    Nombre Completo valido.
+                                </div>
+                                <div class="invalid-feedback">
+                                    Completar este campo, máximo 64 caracteres. Ingresar solo letras, numeros o guiones.
+                                </div>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <label ><strong>Correo Electronico</strong></label>
+                            <div class="form-control">{{user.emailUser}}</div>
+                        </div>
+                        <br>
+                        <div class="form-group text-center">
+                            <button class="btn btn-success btn-block">
+                                Cambiar datos
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header text-center">
+                    <h5>
+                        <strong>Cambiar Contraseña</strong>
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <form action="/profile/updatepassword/{{user.idUser}}" method="post">
+                        <div class="form-group">
+                            <label for="passwordUser" class="label-form"><strong>Contraseña Actual</strong></label>
+                            <input type="password" name="passwordUser" id="passwordUser" class="form-control">
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <label for="newpasswordUser" class="label-form"><strong>Contraseña Nueva</strong></label>
+                            <input type="password" name="newpasswordUser" id="newpasswordUser" class="form-control">
+                        </div>
+                        <br>
+                        <div class="form-group text-center">
+                            <button class="btn btn-success btn-block">
+                                Cambiar Contraseña
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/js/validation.js"></script>

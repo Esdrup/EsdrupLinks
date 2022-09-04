@@ -1,0 +1,37 @@
+<nav class="navbar navbar-expand-lg bg-dark">
+    <div class="container">
+        <a class="navbar-brand text-white" href="/">EsdrupLinks</a>
+        <div class="ml-auto " id="navbarNav">
+            <ul class="navbar-nav">
+                {{#if user}}
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        <strong>Links</strong>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/links">Mis links</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="/links/add">Crear link</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="/profile" class="nav-link text-white">Perfil</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/logout" class="nav-link text-white">Cerrar Sesión</a>
+                </li>
+                {{else}}
+                <li class="nav-item">
+                    <a href="/signin" class="nav-link text-white">Ingresa</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/signup" class="nav-link text-white"><strong>Registate</strong></a>
+                </li>
+                {{/if}}
+            </ul>
+        </div>
+    </div>
+</nav>
