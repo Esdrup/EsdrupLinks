@@ -35,8 +35,8 @@ passport.use('local.signup', new LocalStrategy({
     passReqToCallback: true
 }, async (req, nameUser, passwordUser, done) => {
     const data = req.body
-
-
+    data.linksUser=0
+    
     const emailvalied = await pool.query('select * from user where emailUser = ?', [data.emailUser])
     console.log(emailvalied.length==0);
     if(emailvalied.length==0){
