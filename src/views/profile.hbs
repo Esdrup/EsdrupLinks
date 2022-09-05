@@ -30,33 +30,33 @@
                             <label for="nameUser" class="form-label"><strong>Nombre de Usuario</strong></label>
                             <input type="text" name="nameUser" id="nameUser" class="form-control"
                                 value="{{user.nameUser}}" required>
-                                <div class="valid-feedback">
-                                    Nombre de usuario valido.
-                                </div>
-                                <div class="invalid-feedback">
-                                    Completar este campo, entre 4 y 16 caracteres. Ingresar solo letras, numeros o guiones.
-                                </div>
+                            <div class="valid-feedback">
+                                Nombre de usuario valido.
+                            </div>
+                            <div class="invalid-feedback">
+                                Completar este campo, entre 4 y 16 caracteres. Ingresar solo letras, numeros o guiones.
+                            </div>
                         </div>
                         <br>
                         <div class="form-group">
                             <label for="fullnameUser" class="form-label"><strong>Nombre Completo</strong></label>
                             <input type="text" name="fullnameUser" id="fullnameUser" value="{{user.fullnameUser}}"
                                 class="form-control" required>
-                                <div class="valid-feedback">
-                                    Nombre Completo valido.
-                                </div>
-                                <div class="invalid-feedback">
-                                    Completar este campo, máximo 64 caracteres. Ingresar solo letras, numeros o guiones.
-                                </div>
+                            <div class="valid-feedback">
+                                Nombre Completo valido.
+                            </div>
+                            <div class="invalid-feedback">
+                                Completar este campo, máximo 64 caracteres. Ingresar solo letras, numeros o guiones.
+                            </div>
                         </div>
                         <br>
                         <div class="form-group">
-                            <label ><strong>Correo Electronico</strong></label>
+                            <label><strong>Correo Electronico</strong></label>
                             <div class="form-control">{{user.emailUser}}</div>
                         </div>
                         <br>
                         <div class="form-group">
-                            <label ><strong>Numero de Links</strong></label>
+                            <label><strong>Numero de Links</strong></label>
                             <div class="form-control">{{user.linksUser}}</div>
                         </div>
                         <br>
@@ -99,4 +99,9 @@
         </div>
     </div>
 </div>
+<footer>
+    <div class="container text-center ">
+        <strong class=" mt-2" id="cprt"> EsdrupLinks @ 2022</strong>
+    </div>
+</footer>
 <script src="/js/validation.js"></script>
