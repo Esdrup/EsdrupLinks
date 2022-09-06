@@ -21,31 +21,33 @@ body{
 }
 .card{
     background: rgba(18, 18, 18, 1);
-    border: rgba(18, 18, 18, 1) 2px;
     border-radius: 5%;
 }
 .card-header{
     color: white;
-    background:solid rgba(18, 18, 18, 1) 2px;
+    background:solid rgba(18, 18, 18, 1) 1px;
     border-radius: 5%;
 }
 .card-body{
     background: #202120;
     color: white;
-    border: solid rgba(15, 15, 15, 1) 1px;
+    border: solid rgba(15, 15, 15, 1) 3px;
     border-radius: 5%;
 }
 
 .form-control{
     background: rgba(15, 15, 15);
     color: white;
-    border: rgba(18, 18, 18, 1) solid 2px;
+    border: rgba(18, 18, 18, 1) solid 1px;
 }
 
 #esdrupLogo{
     width: 50px;
 }
 
+.dropdown-menu {
+    min-width:30px;
+  }
 
 #cprt{
     color: gray;
