@@ -1,6 +1,5 @@
 const express = require('express')
 const routerAuthentication = express.Router()
-const passport = require('passport')
 const {isLoggedIn, isLoggedOut} =require('../lib/is')
 
 const authenticationController = require('../controllers/authenticationController')
