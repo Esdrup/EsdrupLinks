@@ -1,5 +1,4 @@
 const express = require('express')
-const { route } = require('.')
 const routerLinks = express.Router()
 const controllerLink = require('../controllers/linkController')
 const {isLoggedIn} = require('../lib/is') 

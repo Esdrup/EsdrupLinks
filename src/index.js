@@ -29,8 +29,6 @@ app.use(flash())    //FLASH
 
 app.use(morgan('dev'))  //MORGAN
 
-app.set('views',path.join(__dirname,'views')) //PATH
-
 app.engine('.hbs', engine({                                 
     defaultLayout: 'main',
     layoutsDir: path.join(app.get('views'),'layouts'),
