@@ -52,3 +52,32 @@ body{
 #cprt{
     color: gray;
 }
+
+
+#me{
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+    border: #3c763d52 4px inset;
+}
+
+#me:hover{
+    width: 210px;
+    height: 210px;
+    border-radius: 45%;
+    border: #3c763d54 4px outset;
+    transition: 300ms;
+}
+
+#uni{
+    width: 80px;
+    height: 80px;
+}
+
+#computer{
+    font-size: 60px;
+}
+
+#endfooter{
+    border-top: 3px solid rgb(24, 26, 27);
+}
