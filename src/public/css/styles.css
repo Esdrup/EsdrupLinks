@@ -81,3 +81,9 @@ body{
 #endfooter{
     border-top: 3px solid rgb(24, 26, 27);
 }
+
+#imageperfil{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}

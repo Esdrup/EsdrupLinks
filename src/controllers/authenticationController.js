@@ -1,8 +1,9 @@
 const controllerAuthentication = {}
+const cloudinary = require('../keys_cloudinary')
+const fs = require('fs-extra')
 const pool = require('../database')
 const passport = require('passport')
 const helpers = require('../lib/helpers')
-const { redirect } = require('express/lib/response')
 
 controllerAuthentication.add = (req, res) => {
     res.render('authentication/signup')
@@ -39,19 +40,19 @@ controllerAuthentication.update = async (req, res) => {
 
 controllerAuthentication.updatepassword = async (req, res) => {
     const data = req.body
-    const {id} = req.params
+    const { id } = req.params
     const rows = await pool.query('select * from user where idUser = ?', [id])
 
     if (rows.length > 0) {
         const datareal = rows[0]
         const validPassword = await helpers.dencryptPassword(data.passwordUser, datareal.passwordUser)
-        
+
         if (validPassword) {
             data.passwordUser = await helpers.encryptPassword(data.newpasswordUser)
-            await pool.query('update user set ? where idUser = ?', [data,id])
-            req.flash('success','Contraseña Cambiada Correctamente')
+            await pool.query('update user set ? where idUser = ?', [data, id])
+            req.flash('success', 'Contraseña Cambiada Correctamente')
         } else {
-            req.flash('message','Contraseña Incorrecta')
+            req.flash('message', 'Contraseña Incorrecta')
         }
     }
     else {
@@ -65,6 +66,24 @@ controllerAuthentication.logout = (req, res) => {
         if (err) return next(err);
         res.redirect("/signin");
     });
+}
+
+controllerAuthentication.addimage = async (req, res) => {
+    try {
+        const { id } = req.params
+    
+        if(req.user.public_id!==null){
+            await cloudinary.v2.uploader.destroy(req.user.public_id)
+        }
+        
+        const result = await cloudinary.v2.uploader.upload(req.file.path)
+        await pool.query('update user set imgUser=? , public_id=? where idUser=?', [result.secure_url,result.public_id,id])
+        await fs.unlink(req.file.path)
+
+        res.redirect('/profile')
+    } catch (e) {
+        console.log(e);
+    }
 }
 
 module.exports = controllerAuthentication

@@ -9,8 +9,9 @@ routerAuthentication.post('/signup',isLoggedOut,authenticationController.save)
 routerAuthentication.get('/signin',isLoggedOut,authenticationController.login)
 routerAuthentication.post('/signin',isLoggedOut,authenticationController.loginverify)
 routerAuthentication.get('/profile',isLoggedIn, authenticationController.showprofile)
-routerAuthentication.post('/profile/update/:id',authenticationController.update)
-routerAuthentication.post('/profile/updatepassword/:id',authenticationController.updatepassword)
+routerAuthentication.post('/profile/update/:id',isLoggedIn,authenticationController.update)
+routerAuthentication.post('/profile/updatepassword/:id',isLoggedIn,authenticationController.updatepassword)
+routerAuthentication.post('/profile/addimage/:id',isLoggedIn,authenticationController.addimage)
 routerAuthentication.get('/logout',isLoggedIn,authenticationController.logout)
 
 module.exports = routerAuthentication

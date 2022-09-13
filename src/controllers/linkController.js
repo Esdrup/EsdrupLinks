@@ -15,12 +15,9 @@ controllerLink.save = async (req, res) => {
     try {
         const data = req.body;
         data.USER_IDUSER=req.user.idUser
-
-        
         req.user.linksUser++
-        console.log(req.user.linksUser); 
-        await pool.query('update user set linksUser = ? where idUser = ?',[req.user.linksUser,req.user.idUser])
 
+        await pool.query('update user set linksUser = ? where idUser = ?',[req.user.linksUser,req.user.idUser])
         await pool.query('insert into Link set ?', [data])
         req.flash('success', 'Link guardado correctamente')
         res.redirect('/links')

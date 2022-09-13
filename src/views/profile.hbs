@@ -73,6 +73,29 @@
             <div class="card">
                 <div class="card-header text-center">
                     <h5>
+                        <strong>Foto de Perfil</strong>
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <form action="/profile/addimage/{{user.idUser}}" method="post" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <div class="custom-file">
+                                <input type="file" name="imgUser" class="custom-file-input form-control" id="inputGroupFile01">
+                            </div>
+                        </div>  
+                        <br>
+                        <div class="form-group text-center">
+                            <button class="btn btn-success btn-block">
+                                Cargar Foto
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <br>
+            <div class="card">
+                <div class="card-header text-center">
+                    <h5>
                         <strong>Cambiar Contraseña</strong>
                     </h5>
                 </div>
