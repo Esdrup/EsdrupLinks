@@ -5,7 +5,7 @@ module.exports = {
     },
 
     isLoggedOut(req,res,next){
-        const verify = req.isAuthenticated()?res.redirect('/profile'):next()
+        const verify = req.isAuthenticated()?res.redirect('/links'):next()
         return verify
     }
 }

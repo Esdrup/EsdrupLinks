@@ -1,32 +1,49 @@
 <div class="container p-4">
     <div class="row">
-        {{#each data}}
-            <div class="col-md-3">
-                <div class="card text-center" id="card-list">
-                    <div class="card-body">
-                        <a href="{{urlLink}}" target="_blank">
-                            <h4 class="card-title">
-                                {{titleLink}}
-                            </h4>
-                        </a>
-                        <p class="pt-2">
-                            {{descriptionLink}}
-                        </p>
-                        
-                        <div class="pt-2">
-                            <a href="/links/update/{{idLink}}" class="btn btn-info text-white" id="update-link">Editar</a>
-                            <a href="/links/delete/{{idLink}}" class="btn btn-danger" id="delete-link">Eliminar</a>
-                        </div>
-                        <p class="pt-2">
-                            {{timeago created_at}}
-                        </p>
-                    </div>
+        {{#if data}}
+
+        <div class="col-md-3 mx-auto">
+            <div class="card text-center" id="card-list">
+                <div class="card-body">
+                    <h6 class="card-title">
+                        <strong>Añadir Link</strong>
+                    </h6>
+                    <a href="/links/add"><i class="fa-solid fa-plus text-success" id="more"></i></a>
                 </div>
             </div>
+        </div>
+
+        <div class="d-block mb-2 mt-4" id="more_sep">
+
+        </div>
+        {{/if}}
+        {{#each data}}
+        <div class="col-md-3 mt-3 mb-3">
+            <div class="card text-center" id="card-list">
+                <div class="card-body">
+                    <a href="{{urlLink}}" target="_blank">
+                        <h4 class="card-title">
+                            {{titleLink}}
+                        </h4>
+                    </a>
+                    <p class="pt-2">
+                        {{descriptionLink}}
+                    </p>
+
+                    <div class="pt-2">
+                        <a href="/links/update/{{idLink}}" class="btn btn-info text-white" id="update-link">Editar</a>
+                        <a href="/links/delete/{{idLink}}" class="btn btn-danger" id="delete-link">Eliminar</a>
+                    </div>
+                    <p class="pt-2">
+                        {{timeago created_at}}
+                    </p>
+                </div>
+            </div>
+        </div>
         {{else}}
         <div class="col-md-4 mx-auto">
             <div class="card card-body text-center">
-                <h5 class="text-black">NO HAY LINKS CREADOS, CREA UNO:</h5>
+                <h5 class="text-white">NO HAY LINKS CREADOS, CREA UNO:</h5>
                 <a href="/links/add" class="btn btn-success">Ir a Crear</a>
             </div>
         </div>

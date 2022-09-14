@@ -79,7 +79,7 @@ controllerAuthentication.addimage = async (req, res) => {
         const result = await cloudinary.v2.uploader.upload(req.file.path)
         await pool.query('update user set imgUser=? , public_id=? where idUser=?', [result.secure_url,result.public_id,id])
         await fs.unlink(req.file.path)
-
+        req.flash('success', 'Foto de perfil colocada correctamente')
         res.redirect('/profile')
     } catch (e) {
         console.log(e);

@@ -2,6 +2,7 @@ body{
   background: rgb(24, 26, 27);
 }
 
+/* ------------- CARDS AND FORM----------------*/
 #card-list{
     background: rgb(247, 248, 247);
 }
@@ -41,6 +42,9 @@ body{
     border: rgba(18, 18, 18, 1) solid 1px;
 }
 
+
+/*------------------NAVIGATION, FOOTER AND OTHER----------------*/
+
 #esdrupLogo{
     width: 50px;
 }
@@ -78,12 +82,34 @@ body{
     font-size: 60px;
 }
 
+#phrase{
+    font-size: 15px;
+}
+
 #endfooter{
     border-top: 3px solid rgb(24, 26, 27);
 }
+
+/* ----------------------- PERFIL PHOTO ----------------*/
 
 #imageperfil{
     width: 35px;
     height: 35px;
     border-radius: 50%;
+}
+
+#bigimageperfil{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: #202120 2px solid;
+}
+
+/* -----------------  LIST ------------------- */
+#more{
+    font-size: 80px;
+}
+
+#more_sep{
+    border-top: rgba(15, 15, 15) 2px solid;
 }

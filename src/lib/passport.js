@@ -36,9 +36,11 @@ passport.use('local.signup', new LocalStrategy({
 }, async (req, nameUser, passwordUser, done) => {
     const data = req.body
     data.linksUser=0
+    data.imgUser="https://res.cloudinary.com/esdruplinks/image/upload/v1663130244/default_crzmrx.jpg"
+    data.public_id="default_crzmrx"
     
     const emailvalied = await pool.query('select * from user where emailUser = ?', [data.emailUser])
-    console.log(emailvalied.length==0);
+    
     if(emailvalied.length==0){
         data.passwordUser = await helpers.encryptPassword(data.passwordUser)
         const rest = await pool.query('insert into user set ?', [data])
