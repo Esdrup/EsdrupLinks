@@ -71,9 +71,11 @@ app.use((req,res,next) =>{
 const indexRoutes = require('./routes')
 const authenticationRoutes = require('./routes/authentication')
 const linksRoutes = require('./routes/links')
+const friendsRoutes = require('./routes/friends')
 
 app.use(indexRoutes)
 app.use(authenticationRoutes)
+app.use(friendsRoutes)
 app.use('/links',linksRoutes)
 
 

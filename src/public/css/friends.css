@@ -1,0 +1,30 @@
+#cardbody-friends{
+    overflow: auto;
+    height: 180px;
+}
+#cardbody-friends::-webkit-scrollbar{
+    width: 10px;
+}
+#cardbody-friends::-webkit-scrollbar-thumb{
+    background: rgba(240, 255, 255, 0.4);
+}
+#cardbody-friends::-webkit-scrollbar-thumb:hover{
+    background: rgba(240, 255, 255, 0.842);
+}
+
+#bloque-friend{
+    margin-bottom: 1%;
+    border-radius: 5%;
+    padding: 2%;
+    border: solid rgba(15, 15, 15, 1) 1px;
+}
+
+#imagefriend{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+
+#b-message{
+    border-radius: 15px !important;
+}
