@@ -36,8 +36,9 @@ passport.use('local.signup', new LocalStrategy({
 }, async (req, nameUser, passwordUser, done) => {
     const data = req.body
     data.linksUser=0
-    data.imgUser="https://res.cloudinary.com/esdruplinks/image/upload/v1663130244/default_crzmrx.jpg"
-    data.public_id="default_crzmrx"
+    data.defaultUser=true
+    data.imgUser="https://res.cloudinary.com/esdruplinks/image/upload/v1663319548/default_kbkb7z.jpg"
+    data.public_id="default_kbkb7z"
     
     const emailvalied = await pool.query('select * from user where emailUser = ?', [data.emailUser])
     

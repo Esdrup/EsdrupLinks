@@ -71,22 +71,28 @@ controllerAuthentication.logout = (req, res) => {
 controllerAuthentication.addimage = async (req, res) => {
     try {
         const { id } = req.params
-        if(req.file==undefined){
+        if (req.file == undefined) {
             console.log(req.file);
             req.flash('message', 'Primero seleccionar imagen')
             req.redirect('/profile')
         }
-        else{
-
-            if(req.user.public_id!==null){
-                await cloudinary.v2.uploader.destroy(req.user.public_id)
+        else {
+            if (req.user.defaultUser == true) {
+                const result = await cloudinary.v2.uploader.upload(req.file.path)
+                await pool.query('update user set imgUser=? , public_id=? , defaultUser=false where idUser=?', [result.secure_url, result.public_id, id])
+                await fs.unlink(req.file.path)
+                req.flash('success', 'Foto de perfil colocada correctamente')
+                res.redirect('/profile')
             }
-            
-            const result = await cloudinary.v2.uploader.upload(req.file.path)
-            await pool.query('update user set imgUser=? , public_id=? where idUser=?', [result.secure_url,result.public_id,id])
-            await fs.unlink(req.file.path)
-            req.flash('success', 'Foto de perfil colocada correctamente')
-            res.redirect('/profile')
+            else {
+                await cloudinary.v2.uploader.destroy(req.user.public_id)
+
+                const result = await cloudinary.v2.uploader.upload(req.file.path)
+                await pool.query('update user set imgUser=? , public_id=? where idUser=?', [result.secure_url, result.public_id, id])
+                await fs.unlink(req.file.path)
+                req.flash('success', 'Foto de perfil colocada correctamente')
+                res.redirect('/profile')
+            }
         }
     } catch (e) {
         console.log(e);
