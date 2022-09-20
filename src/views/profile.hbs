@@ -83,7 +83,7 @@
                     <form action="/profile/addimage/{{user.idUser}}" method="post" enctype="multipart/form-data">
                         <div class="form-group">
                             <div class="custom-file">
-                                <input type="file" name="imgUser" class="custom-file-input form-control" id="inputGroupFile01">
+                                <input type="file" name="imgUser" class="custom-file-input form-control" id="inputGroupFile01" required>
                             </div>
                         </div>  
                         <br>
@@ -106,12 +106,12 @@
                     <form action="/profile/updatepassword/{{user.idUser}}" method="post">
                         <div class="form-group">
                             <label for="passwordUser" class="label-form"><strong>Contraseña Actual</strong></label>
-                            <input type="password" name="passwordUser" id="passwordUser" class="form-control">
+                            <input type="password" name="passwordUser" id="passwordUser" class="form-control" required>
                         </div>
                         <br>
                         <div class="form-group">
                             <label for="newpasswordUser" class="label-form"><strong>Contraseña Nueva</strong></label>
-                            <input type="password" name="newpasswordUser" id="newpasswordUser" class="form-control">
+                            <input type="password" name="newpasswordUser" id="newpasswordUser" class="form-control" required>
                         </div>
                         <br>
                         <div class="form-group text-center">
