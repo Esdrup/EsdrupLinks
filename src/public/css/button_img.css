@@ -1,0 +1,10 @@
+#button_delete_img{
+    position: absolute;
+    top: 70%;
+    right: 5%;
+}
+
+#button_cancel_edit_link{
+    position: absolute;
+    left: 63%;
+}

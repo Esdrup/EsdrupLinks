@@ -25,10 +25,6 @@ body::-webkit-scrollbar-thumb:hover{
     border: 1px rgb(165, 29, 42) solid;
 }
 
-#btn-secundary{
-    background: darkgray;
-    color: white;
-}
 .card{
     background: rgba(18, 18, 18, 1);
     border-radius: 5%;

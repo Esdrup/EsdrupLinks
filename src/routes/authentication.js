@@ -12,6 +12,7 @@ routerAuthentication.get('/profile',isLoggedIn, authenticationController.showpro
 routerAuthentication.post('/profile/update/:id',isLoggedIn,authenticationController.update)
 routerAuthentication.post('/profile/updatepassword/:id',isLoggedIn,authenticationController.updatepassword)
 routerAuthentication.post('/profile/addimage/:id',isLoggedIn,authenticationController.addimage)
+routerAuthentication.post('/profile/deleteimage/:id',isLoggedIn,authenticationController.deleteimage)
 routerAuthentication.get('/logout',isLoggedIn,authenticationController.logout)
 
 module.exports = routerAuthentication

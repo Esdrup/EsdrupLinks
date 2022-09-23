@@ -87,9 +87,16 @@
                             </div>
                         </div>  
                         <br>
-                        <div class="form-group text-center">
-                            <button class="btn btn-success btn-block">
+                        <div class="form-group">
+                            <button class="btn btn-success ">
                                 Cargar Foto
+                            </button>
+                        </div>
+                    </form>
+                    <form action="/profile/deleteimage/{{user.idUser}}" method="post" id="button_delete_img">
+                        <div class="form-group">
+                            <button class="btn btn-danger">
+                                Eliminar Foto
                             </button>
                         </div>
                     </form>

@@ -99,4 +99,18 @@ controllerAuthentication.addimage = async (req, res) => {
     }
 }
 
+controllerAuthentication.deleteimage = async (req,res)=>{
+    if(req.user.defaultUser==false){
+        await cloudinary.v2.uploader.destroy(req.user.public_id)
+        const linkdefault = "https://res.cloudinary.com/esdruplinks/image/upload/v1663319548/default_kbkb7z.jpg"
+        const publicId = "default_kbkb7z"
+        pool.query('update user set defaultUser=?, imgUser=? , public_id=?  where idUser= ? ',[true, linkdefault, publicId ,req.user.idUser])
+        res.redirect('/profile')
+    }
+    else{
+        req.flash('message','¡No se ha colocado foto!')
+        res.redirect('/profile')
+    }
+}
+
 module.exports = controllerAuthentication
