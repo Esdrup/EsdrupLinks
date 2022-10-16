@@ -72,11 +72,13 @@ const indexRoutes = require('./routes')
 const authenticationRoutes = require('./routes/authentication')
 const linksRoutes = require('./routes/links')
 const friendsRoutes = require('./routes/friends')
+const uniRoutes = require('./routes/uni')
 
 app.use(indexRoutes)
 app.use(authenticationRoutes)
 app.use(friendsRoutes)
 app.use('/links',linksRoutes)
+app.use(uniRoutes)
 
 
 //PUBLIC

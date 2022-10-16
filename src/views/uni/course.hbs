@@ -1,0 +1,89 @@
+<div class="container pt-4">
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <div class="card">
+                <div class="card-header text-center">
+                    <h3>
+                        NUEVO CURSO
+                    </h3>
+                </div>
+                <div class="card-body">
+                    <form action="/course/add" method="post" class="needs-validation">
+                        <div class="form-group">
+                            <input type="text" name="codCourse" id="codCourse" placeholder="Código Curso" class="form-control"
+                                autofocus required>
+                            <div class="valid-feedback">
+                                Código Valido.
+                            </div>
+                            <div class="invalid-feedback">
+                                Código Invalido, necesita por lo menos un caracter.
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <input type="text" name="nameCourse" id="nameCourse" placeholder="Nombre Curso" class="form-control"
+                                autofocus required>
+                            <div class="valid-feedback">
+                                Nombre Valido.
+                            </div>
+                            <div class="invalid-feedback">
+                                Nombre Invalido, necesita por lo menos un caracter.
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <input type="url" name="linkCourse" id="linkCourse" placeholder="Link de plataforma del Curso" class="form-control"
+                                required>
+                            <div class="valid-feedback">
+                                Link de Plataforma valido.
+                            </div>
+                            <div class="invalid-feedback">
+                                Link de Plataforma Invalido.
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <input type="url" name="virtualclasslinkCourse" id="virtualclasslinkCourse" placeholder="Link de la clase virtual" class="form-control"
+                                required>
+                            <div class="valid-feedback">
+                                Link de Clase virtual valido.
+                            </div>
+                            <div class="invalid-feedback">
+                                Link de Clase virtual Invalido.
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <input type="url" name="repolinkCourse" id="repolinkCourse" placeholder="Link de repositorio virtual" class="form-control"
+                                required>
+                            <div class="valid-feedback">
+                                Link de repositorio virtual valido.
+                            </div>
+                            <div class="invalid-feedback">
+                                Link de repositorio virtual Invalido.
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <input type="url" name="repogrupolinkCourse" id="repogrupolinkCourse" placeholder="Link de repositorio grupal" class="form-control"
+                                required>
+                            <div class="valid-feedback">
+                                Link de repositorio grupal valido.
+                            </div>
+                            <div class="invalid-feedback">
+                                Link de repositorio grupal Invalido.
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-group text-center">
+                            <button class="btn btn-success btn-block">
+                                Añadir Curso
+                            </button>
+                            <a href="/uni" class="btn btn-dark">Cancelar</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

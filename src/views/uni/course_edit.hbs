@@ -1,0 +1,89 @@
+<div class="container pt-4">
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <div class="card">
+                <div class="card-header text-center">
+                    <h3>
+                        NUEVO CURSO
+                    </h3>
+                </div>
+                <div class="card-body">
+                    <form action="/course/update/{{data.idCourse}}" method="post" class="needs-validation" novalidate>
+                        <div class="form-group">
+                            <input type="text" name="codCourse" id="codCourse" value="{{data.codCourse}}" class="form-control"
+                                autofocus required>
+                            <div class="valid-feedback">
+                                Código Valido.
+                            </div>
+                            <div class="invalid-feedback">
+                                Código Invalido, necesita por lo menos un caracter.
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <input type="text" name="nameCourse" id="nameCourse" value="{{data.nameCourse}}" class="form-control"
+                                autofocus required>
+                            <div class="valid-feedback">
+                                Nombre Valido.
+                            </div>
+                            <div class="invalid-feedback">
+                                Nombre Invalido, necesita por lo menos un caracter.
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <input type="url" name="linkCourse" id="linkCourse" value="{{data.linkCourse}}" class="form-control"
+                                required>
+                            <div class="valid-feedback">
+                                Link de Plataforma valido.
+                            </div>
+                            <div class="invalid-feedback">
+                                Link de Plataforma Invalido.
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <input type="url" name="virtualclasslinkCourse" id="virtualclasslinkCourse" value="{{data.virtualclasslinkCourse}}" class="form-control"
+                                required>
+                            <div class="valid-feedback">
+                                Link de Clase virtual valido.
+                            </div>
+                            <div class="invalid-feedback">
+                                Link de Clase virtual Invalido.
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <input type="url" name="repolinkCourse" id="repolinkCourse" value="{{data.repolinkCourse}}" class="form-control"
+                                required>
+                            <div class="valid-feedback">
+                                Link de repositorio virtual valido.
+                            </div>
+                            <div class="invalid-feedback">
+                                Link de repositorio virtual Invalido.
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <input type="url" name="repogrupolinkCourse" id="repogrupolinkCourse" value="{{data.repogrupolinkCourse}}" class="form-control"
+                                required>
+                            <div class="valid-feedback">
+                                Link de repositorio grupal valido.
+                            </div>
+                            <div class="invalid-feedback">
+                                Link de repositorio grupal Invalido.
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-group text-center">
+                            <button class="btn btn-success btn-block">
+                                Editar Curso
+                            </button>
+                            <a href="/uni" class="btn btn-dark">Cancelar</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
