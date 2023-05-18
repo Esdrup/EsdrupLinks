@@ -84,7 +84,7 @@ app.use(uniRoutes)
 //PUBLIC
 app.use(express.static(path.join(__dirname,'public')))
 
-
+    
 //START SERVER
 app.listen(app.get('port'), ()=>{
     console.log("SERVER PRENDIDO EN EL PUERTO ",app.get('port'))
