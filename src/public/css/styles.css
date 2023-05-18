@@ -23,11 +23,11 @@ body::-webkit-scrollbar-thumb:hover{
 }
 
 #update-link{
-    background: rgb(35, 148, 253);
+    background: rgba(35, 148, 253, 0.575);
     border: 1px rgb(35, 148, 253) solid;  
 }
 #delete-link{
-    background: rgb(165, 29, 42);
+    background: rgba(165, 29, 43, 0.589);
     border: 1px rgb(165, 29, 42) solid;
 }
 
@@ -37,14 +37,16 @@ body::-webkit-scrollbar-thumb:hover{
 }
 .card-header{
     color: white;
-    background:solid rgba(18, 18, 18, 1) 1px;
     border-radius: 5%;
 }
 .card-body{
     background: #202120;
     color: white;
-    border: solid rgba(15, 15, 15, 1) 3px;
     border-radius: 5%;
+}
+
+.card_title_link{
+    text-decoration: none;
 }
 
 .form-control{
@@ -82,25 +84,30 @@ nav{
     color: gray;
 }
 
-
 #me{
-    width: 200px;
-    height: 200px;
+    width: 20em;
+    height: 20em;
     border-radius: 100%;
     border: #3c763d52 4px inset;
 }
 
 #me:hover{
-    width: 210px;
-    height: 210px;
-    border-radius: 45%;
+    width: 25em;
+    height: 25em;
     border: #3c763d54 4px outset;
     transition: 300ms;
 }
+#description_me_content{
+    margin-top: 8em;
+}
+
+#description_me{
+    font-size:  large;
+}
 
 #uni{
-    width: 80px;
-    height: 80px;
+    width: 10em;
+    height: 10em;
 }
 
 #computer{
