@@ -5,7 +5,7 @@ const {engine} = require('express-handlebars')
 const flash = require('connect-flash')
 const session = require('express-session')
 const MYSQLStore = require('express-mysql-session')
-const {database} = require('./keys')
+const {database} = require('./src/keys')
 const passport = require('passport')
 const multer = require('multer')
 const cloudinary = require('cloudinary')
@@ -15,12 +15,12 @@ const handlebars = require('handlebars')
 
 //INITIALS
 const app = express()
-require('./lib/passport')
+require('./src/lib/passport')
 
 
 //SETTIGS
 app.set('port',process.env.PORT || 4000)
-app.set('views',path.join(__dirname, 'views'))
+app.set('views',path.join(__dirname, './src/views'))
 
 //MIDLEWARES
 app.use(session({
@@ -39,7 +39,7 @@ app.engine('.hbs', engine({
     partialsDir: path.join(app.get('views'),'partials'),
     handlebars: allowInsecurePrototypeAccess(handlebars),
     extname: '.hbs',
-    helpers: require('./lib/handlebars')
+    helpers: require('./src/lib/handlebars')
 }))
 app.set('view engine', '.hbs')                //MOTOR DE VISTAS
 
@@ -50,7 +50,7 @@ app.use(passport.initialize())
 app.use(passport.session())                     //INICIA PASSPORT
 
 const storage = multer.diskStorage({
-    destination: path.join(__dirname,'public/uploads'),
+    destination: path.join(__dirname,'./src/public/uploads'),
     filename: (req,file,cb) => {
         cb(null,new Date().getTime()+path.extname(file.originalname)) //STORAGE MULTER
     }
@@ -68,11 +68,11 @@ app.use((req,res,next) =>{
 
 
 //ROUTES
-const indexRoutes = require('./routes')
-const authenticationRoutes = require('./routes/authentication')
-const linksRoutes = require('./routes/links')
-const friendsRoutes = require('./routes/friends')
-const uniRoutes = require('./routes/uni')
+const indexRoutes = require('./src/routes')
+const authenticationRoutes = require('./src/routes/authentication')
+const linksRoutes = require('./src/routes/links')
+const friendsRoutes = require('./src/routes/friends')
+const uniRoutes = require('./src/routes/uni')
 
 app.use(indexRoutes)
 app.use(authenticationRoutes)
@@ -82,7 +82,7 @@ app.use(uniRoutes)
 
 
 //PUBLIC
-app.use(express.static(path.join(__dirname,'public')))
+app.use(express.static(path.join(__dirname,'./src/public')))
 
     
 //START SERVER
