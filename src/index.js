@@ -24,7 +24,7 @@ app.set('views',path.join(__dirname, 'views'))
 
 //MIDLEWARES
 app.use(session({
-    secret:'topsecrectesdrup',
+    secret:process.env.DB_SECRET,
     resave: false,
     saveUninitialized: false,
     store: new MYSQLStore(database)
@@ -86,6 +86,14 @@ app.use(express.static(path.join(__dirname,'public')))
 
     
 //START SERVER
-app.listen(app.get('port'), ()=>{
+const server = app.listen(app.get('port'), ()=>{
     console.log("SERVER PRENDIDO EN EL PUERTO ",app.get('port'))
+})
+
+//SOCKET SETTINGS
+const SocketIO = require('socket.io')
+const io = SocketIO(server)
+
+io.on('connection',(socket)=>{
+    console.log('Nueva Conection',socket.id)
 })

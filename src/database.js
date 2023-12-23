@@ -1,8 +1,8 @@
-const mysql = require('mysql')
+const mysql2 = require('mysql2')
 const {promisify} = require('util')
 const {database} = require('./keys')
 
-const pool = mysql.createPool(database)
+const pool = mysql2.createPool(database)
 
 pool.getConnection((err,conn)=>{
     if(err){
